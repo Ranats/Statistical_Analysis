@@ -59,4 +59,5 @@ hyperVolume.each_with_index do |hv,i|
   sheet.add_cell(i,0,hv)
 end
 
-book.write("output/hyperVolumes.xlsx")
+Dir.mkdir("output/#{ARGV[0]}")
+book.write("output/#{ARGV[0]}/hyperVolumes.xlsx")
