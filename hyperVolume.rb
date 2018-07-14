@@ -1,6 +1,9 @@
+### Usage
+### ruby hyperVolume.rb #{data_directory_name}
+
 require "rubyXL"
 
-$path = File.expand_path("#{Dir.pwd}/data/nonPrefer")
+$path = File.expand_path("#{Dir.pwd}/data/#{ARGV[0]}")
 
 # minimize
 reference_point = Array.new(3,0)
@@ -56,4 +59,4 @@ hyperVolume.each_with_index do |hv,i|
   sheet.add_cell(i,0,hv)
 end
 
-book.write("output.xlsx")
+book.write("output/hyperVolumes.xlsx")
